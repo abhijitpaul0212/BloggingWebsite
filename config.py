@@ -26,9 +26,12 @@ class BaseConfig(object):
     # mail accounts
     MAIL_DEFAULT_SENDER = 'abhijitpaul0212@gmail.com'
 
+    SERVER_NAME="localhost:5001"
+
 
 class DevelopmentConfig(BaseConfig):
     DEBUG = True
     SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'instance/app.db')
     DEBUG_TB_ENABLED = True
+    SERVER_NAME="0.0.0.0:8000"
     

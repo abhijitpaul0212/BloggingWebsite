@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<center>
+    <ul class="nav justify-content-center blog_home_links">
+        <li class="nav-item">
+            <a class="nav-link active" href="{{ url_for('blogs.create_blog') }}">Create Blog</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('blogs.view_blogs') }}">View My Blogs</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('blogs.list_all_blogs') }}">List All Blogs</a>
+        </li>
+    </ul>
+    <br>
+    <h2>Welcome {{ current_user.username }}</h2>
+
+    <form action="" method="POST">
+        <p>
+            <table style="border: 1px solid black; border-radius: 10px; padding: 3%; width: 80%;">
+                <tr>
+                    <td style="width: 20%;">
+                        Select the Category:
+                    </td>
+                    <td>
+                        <select style="width: 80%;" name="category_id">
+                            {% for a_category in all_category_id %}
+                                <option value="{{ a_category }}"> {{ all_category_name[loop.index0] }}</option>
+                            {% endfor %}
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 20%;">
+                        Blog Content:
+                    </td>
+                    <td>
+                        <textarea rows="20" style="width: 80%;" name="blog_text"></textarea>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <input type="submit" value="Insert"/>
+        </p>
+    </form>
+    <br>
+</center>
+{% endblock %}

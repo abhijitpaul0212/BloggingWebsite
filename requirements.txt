@@ -1,0 +1,8 @@
+flask==2.3.2
+flask-sqlalchemy==3.0.5
+flask-login==0.6.2
+flask_migrate==4.0.4
+flask-mail==0.9.1
+flask-ext==0.1
+python-dotenv==1.0.0
+gunicorn==20.0.4
